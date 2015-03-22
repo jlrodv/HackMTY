@@ -35,39 +35,31 @@
 - (void)downloadFromParse:(NSInteger)segmentedIndex
 {
     [dueDates removeAllObjects];
+    PFQuery *query = [PFQuery queryWithClassName:@"Task"];
     switch(segmentedIndex)
     {
         case 0:
         {
-            PFQuery *query = [PFQuery queryWithClassName:@"CurrentTask"];
-            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                if(!error){
-                    queryArray = objects;
-                    for (PFObject *object in queryArray) {
-                        [dueDates addObject:[object objectForKey:@"DueDate"]];
-                    }
-                    [self.tableHomework reloadData];
-                }
-            }];
+            [query whereKey:@"Completed" equalTo:[NSNumber numberWithBool:NO]];
         }
         break;
         case 1:
         {
-            PFQuery *query = [PFQuery queryWithClassName:@"CompleteTask"];
-            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                if(!error){
-                    queryArray = objects;
-                    for (PFObject *object in queryArray) {
-                        [dueDates addObject:[object objectForKey:@"DueDate"]];
-                    }
-                    [self.tableHomework reloadData];
-                }
-            }];
+            [query whereKey:@"Completed" equalTo:[NSNumber numberWithBool:YES]];
         }
         break;
         default:
             break;
     }
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(!error){
+            queryArray = objects;
+            for (PFObject *object in queryArray) {
+                [dueDates addObject:[object objectForKey:@"DueDate"]];
+            }
+            [self.tableHomework reloadData];
+        }
+    }];
 }
 
 #pragma mark Table View
