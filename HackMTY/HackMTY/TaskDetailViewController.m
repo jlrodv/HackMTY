@@ -23,10 +23,15 @@
     
     NSLog(@"task detail: %@", self.taskDetail);
     self.labelTitle.text = [self.taskDetail objectForKey:@"Title"];
-    self.textDescription.text = [self.taskDetail objectForKey:@"Description"];
+    self.labelDescription.text = [self.taskDetail objectForKey:@"Description"];
     
     NSString *dateString = [NSDateFormatter localizedStringFromDate:[self.taskDetail objectForKey:@"DueDate"] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterFullStyle];
-    self.textDescription.text = [self.textDescription.text stringByAppendingString:[NSString stringWithFormat:@".\nDue Date: %@", dateString]];
+    NSString *shortDate = [dateString substringToIndex:[dateString length] - 48];
+    self.labelDescription.text = [self.labelDescription.text stringByAppendingString:[NSString stringWithFormat:@".\nDue Date: %@", shortDate]];
+    
+    //Dropbox
+    self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+    self.restClient.delegate = self;
 }
 
 - (void)dismissView
@@ -37,8 +42,12 @@
 
 - (IBAction)shareFolder:(UIButton *)sender
 {
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Add to shared folder" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *dropboxAction = [UIAlertAction actionWithTitle:@"Dropbox" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        PFObject *object = [PFObject objectWithoutDataWithClassName:@"Task" objectId:[self.taskDetail objectId]];
+        [object setObject:[NSString stringWithFormat:@"www.dropbox.com/mySharedFolder"] forKey:@"sharedLink"];
+        [object save];
         UIAlertController *alertSucess = [UIAlertController alertControllerWithTitle:@"Success!" message:@"Your file has been uploaded. You can share it with your contacts by copying this link: www.dropbox.com/MySharedFolder/file.pdf" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *laterAction = [UIAlertAction actionWithTitle:@"Later" style:UIAlertActionStyleDefault handler:nil];
         UIAlertAction *copyAction = [UIAlertAction actionWithTitle:@"Copy" style:UIAlertActionStyleCancel handler:nil];
@@ -68,6 +77,7 @@
     [alert addAction:oneDriveAction];
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
+    [UIPasteboard generalPasteboard].string = @"https://www.dropbox.com/mySharedFolder";
 }
 
 

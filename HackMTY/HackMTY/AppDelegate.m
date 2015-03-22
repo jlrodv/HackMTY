@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <DropboxSDK/DropboxSDK.h>
 
 
 @interface AppDelegate ()
@@ -21,8 +22,16 @@
     
     [Parse setApplicationId:@"tI3vFDmF1DyGCtmoBOdLDuE7FDnuXjtnD1OQAoQc" clientKey:@"l02JGamFT64zGBhpIAdF5UQwUCDfSn3Sxff33hKy"];
     
+    DBSession *session = [[DBSession alloc] initWithAppKey:@"ux3skijd25r0ae3" appSecret:@"vin9jmumjt0m9bz" root:kDBRootAppFolder];
+    [DBSession setSharedSession:session];
     
-       
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:91.0/255.0f green:49.0/255.0f blue:141.0/255.0f alpha:1.0f]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setTranslucent:YES];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:91.0/255.0f green:49.0/255.0f blue:141.0/255.0f alpha:1.0f]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     
     return YES;
 }

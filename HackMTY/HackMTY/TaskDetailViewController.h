@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <DropboxSDK/DropboxSDK.h>
 
-@interface TaskDetailViewController : UIViewController
+@interface TaskDetailViewController : UIViewController <DBRestClientDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-@property (weak, nonatomic) IBOutlet UITextView *textDescription;
 @property (weak, nonatomic) IBOutlet UIButton *buttonShared;
+@property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 - (IBAction)shareFolder:(UIButton *)sender;
 
 @property (nonatomic, strong)PFObject *taskDetail;
+@property (nonatomic, strong)DBRestClient *restClient;
 @end
