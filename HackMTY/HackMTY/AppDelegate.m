@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-@interface AppDelegate ()
+#import "TabBarViewController.h"
+#import "GroupViewController.h"
 
+@interface AppDelegate ()
+@property (nonatomic, strong) TabBarViewController *tabBar;
 @end
 
 @implementation AppDelegate
@@ -19,6 +22,20 @@
     
     [Parse setApplicationId:@"tI3vFDmF1DyGCtmoBOdLDuE7FDnuXjtnD1OQAoQc" clientKey:@"l02JGamFT64zGBhpIAdF5UQwUCDfSn3Sxff33hKy"];
     
+    
+    
+    self.tabBar = [[ TabBarViewController alloc] init];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.window.rootViewController =self.tabBar;
+    
+    [self.window makeKeyAndVisible];
+    
+   
+
     // Override point for customization after application launch.
     return YES;
 }

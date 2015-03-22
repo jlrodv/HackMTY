@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TabBarViewController.h
 //  HackMTY
 //
 //  Created by Jose Luis Rodriguez on 21/03/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TabBarViewController : UITabBarController
 
 @end
-

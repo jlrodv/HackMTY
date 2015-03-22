@@ -10,11 +10,14 @@
 		39982CBA6B41960741E1C356 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D69150272356D055BA599D5 /* libPods.a */; };
 		A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9A71ABDE97F00B7D32A /* main.m */; };
 		A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */; };
-		A0E4C9AE1ABDE97F00B7D32A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9AD1ABDE97F00B7D32A /* ViewController.m */; };
 		A0E4C9B31ABDE97F00B7D32A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9B21ABDE97F00B7D32A /* Images.xcassets */; };
 		A0E4C9B61ABDE97F00B7D32A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9B41ABDE97F00B7D32A /* LaunchScreen.xib */; };
 		A0E4C9C21ABDE97F00B7D32A /* HackMTYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9C11ABDE97F00B7D32A /* HackMTYTests.m */; };
-		A0E4C9CE1ABE2E8400B7D32A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9CD1ABE2E8400B7D32A /* ViewController.xib */; };
+		A0E4C9D11ABE30F800B7D32A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9D01ABE30F800B7D32A /* TabBarViewController.m */; };
+		A0E4C9DA1ABE404400B7D32A /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9D81ABE404400B7D32A /* GroupViewController.m */; };
+		A0E4C9DB1ABE404400B7D32A /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9D91ABE404400B7D32A /* GroupViewController.xib */; };
+		A0E4C9DD1ABE48C000B7D32A /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9DC1ABE48C000B7D32A /* CellView.xib */; };
+		A0E4C9E01ABE4BE400B7D32A /* GroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9DF1ABE4BE400B7D32A /* GroupTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +38,19 @@
 		A0E4C9A71ABDE97F00B7D32A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0E4C9A91ABDE97F00B7D32A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0E4C9AC1ABDE97F00B7D32A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0E4C9AD1ABDE97F00B7D32A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A0E4C9B21ABDE97F00B7D32A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0E4C9B51ABDE97F00B7D32A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A0E4C9BB1ABDE97F00B7D32A /* HackMTYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackMTYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E4C9C01ABDE97F00B7D32A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E4C9C11ABDE97F00B7D32A /* HackMTYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackMTYTests.m; sourceTree = "<group>"; };
-		A0E4C9CD1ABE2E8400B7D32A /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		A0E4C9CF1ABE30F800B7D32A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		A0E4C9D01ABE30F800B7D32A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		A0E4C9D71ABE404400B7D32A /* GroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupViewController.h; sourceTree = "<group>"; };
+		A0E4C9D81ABE404400B7D32A /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupViewController.m; sourceTree = "<group>"; };
+		A0E4C9D91ABE404400B7D32A /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
+		A0E4C9DC1ABE48C000B7D32A /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		A0E4C9DE1ABE4BE400B7D32A /* GroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTableViewCell.h; sourceTree = "<group>"; };
+		A0E4C9DF1ABE4BE400B7D32A /* GroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTableViewCell.m; sourceTree = "<group>"; };
 		B2392BE415C0B763776E1B01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,11 +107,16 @@
 			children = (
 				A0E4C9A91ABDE97F00B7D32A /* AppDelegate.h */,
 				A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */,
-				A0E4C9AC1ABDE97F00B7D32A /* ViewController.h */,
-				A0E4C9AD1ABDE97F00B7D32A /* ViewController.m */,
 				A0E4C9B21ABDE97F00B7D32A /* Images.xcassets */,
 				A0E4C9B41ABDE97F00B7D32A /* LaunchScreen.xib */,
-				A0E4C9CD1ABE2E8400B7D32A /* ViewController.xib */,
+				A0E4C9CF1ABE30F800B7D32A /* TabBarViewController.h */,
+				A0E4C9D01ABE30F800B7D32A /* TabBarViewController.m */,
+				A0E4C9D71ABE404400B7D32A /* GroupViewController.h */,
+				A0E4C9D81ABE404400B7D32A /* GroupViewController.m */,
+				A0E4C9D91ABE404400B7D32A /* GroupViewController.xib */,
+				A0E4C9DC1ABE48C000B7D32A /* CellView.xib */,
+				A0E4C9DE1ABE4BE400B7D32A /* GroupTableViewCell.h */,
+				A0E4C9DF1ABE4BE400B7D32A /* GroupTableViewCell.m */,
 				A0E4C9A51ABDE97F00B7D32A /* Supporting Files */,
 			);
 			path = HackMTY;
@@ -225,8 +238,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E4C9DD1ABE48C000B7D32A /* CellView.xib in Resources */,
+				A0E4C9DB1ABE404400B7D32A /* GroupViewController.xib in Resources */,
 				A0E4C9B61ABDE97F00B7D32A /* LaunchScreen.xib in Resources */,
-				A0E4C9CE1ABE2E8400B7D32A /* ViewController.xib in Resources */,
 				A0E4C9B31ABDE97F00B7D32A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0E4C9AE1ABDE97F00B7D32A /* ViewController.m in Sources */,
+				A0E4C9E01ABE4BE400B7D32A /* GroupTableViewCell.m in Sources */,
+				A0E4C9DA1ABE404400B7D32A /* GroupViewController.m in Sources */,
+				A0E4C9D11ABE30F800B7D32A /* TabBarViewController.m in Sources */,
 				A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */,
 				A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */,
 			);
