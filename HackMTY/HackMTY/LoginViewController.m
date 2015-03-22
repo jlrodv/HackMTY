@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"login");
     
 }
 
