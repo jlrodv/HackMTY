@@ -11,13 +11,8 @@
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *fieldEmailLogin;
-@property (weak, nonatomic) IBOutlet UITextField *fieldPasswordLogin;
-@property (weak, nonatomic) IBOutlet UITextField *fieldEmailSignUp;
-@property (weak, nonatomic) IBOutlet UITextField *fieldUsernameSignUp;
-@property (weak, nonatomic) IBOutlet UITextField *fieldPasswordSignUp;
+
 
 - (IBAction)loginUser:(UIButton *)sender;
 - (IBAction)signupUser:(UIButton *)sender;
-- (IBAction)hideKeyboard:(UITapGestureRecognizer *)sender;
 @end
