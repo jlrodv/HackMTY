@@ -9,6 +9,7 @@
 #import "HomeworkViewController.h"
 #import <Parse/Parse.h>
 #import "HomeworkCell.h"
+#import "TaskDetailViewController.h"
 
 @interface HomeworkViewController ()
 {
@@ -82,7 +83,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFObject *object = [queryArray objectAtIndex:indexPath.row];
+    TaskDetailViewController *taskDetail = [[self storyboard] instantiateViewControllerWithIdentifier:@"taskDetail"];
+    taskDetail.taskDetail = [queryArray objectAtIndex:indexPath.row];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:taskDetail];
+    [self presentViewController:nv animated:YES completion:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    /*PFObject *object = [queryArray objectAtIndex:indexPath.row];
     PFObject *saver = [PFObject objectWithoutDataWithClassName:@"Task" objectId:[object objectId]];
     
     switch(self.buttonSwitch.selectedSegmentIndex)
@@ -125,7 +132,7 @@
         break;
         default:
             break;
-    }
+    }*/
 }
 
 

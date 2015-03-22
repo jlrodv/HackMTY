@@ -373,6 +373,7 @@
                     <connections>
                         <outlet property="buttonSwitch" destination="rvw-qO-5Xd" id="hhC-ZM-AT3"/>
                         <outlet property="tableHomework" destination="LV1-3R-6CA" id="pKH-FZ-ly3"/>
+                        <segue destination="qsd-MF-liP" kind="showDetail" id="G3U-HQ-VpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dju-ok-5Z1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -452,6 +453,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R18-gP-Eic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5268" y="1067"/>
+        </scene>
+        <!--Task Detail View Controller-->
+        <scene sceneID="2Ng-z9-nLP">
+            <objects>
+                <viewController storyboardIdentifier="taskDetail" id="qsd-MF-liP" customClass="TaskDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rzh-3d-aAN"/>
+                        <viewControllerLayoutGuide type="bottom" id="F0o-5n-PU7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fzO-q3-oHr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMA-b6-qyL">
+                                <rect key="frame" x="16" y="70" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description..." translatesAutoresizingMaskIntoConstraints="NO" id="js1-PC-dYR">
+                                <rect key="frame" x="0.0" y="99" width="600" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="JTm-Ui-tbO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-XX-fCq">
+                                <rect key="frame" x="225" y="423" width="150" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wze-CD-wh8"/>
+                                    <constraint firstAttribute="width" constant="150" id="yYa-gW-AhH"/>
+                                </constraints>
+                                <state key="normal" title="Add shared folder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareFolder:" destination="qsd-MF-liP" eventType="touchUpInside" id="T5Q-PU-j2l"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="js1-PC-dYR" firstAttribute="centerX" secondItem="eMA-b6-qyL" secondAttribute="centerX" id="0KT-y5-IBB"/>
+                            <constraint firstAttribute="centerX" secondItem="IYf-XX-fCq" secondAttribute="centerX" id="91v-3y-TgZ"/>
+                            <constraint firstItem="IYf-XX-fCq" firstAttribute="top" secondItem="js1-PC-dYR" secondAttribute="bottom" constant="174" id="GYX-Ia-DyK"/>
+                            <constraint firstItem="eMA-b6-qyL" firstAttribute="leading" secondItem="fzO-q3-oHr" secondAttribute="leadingMargin" id="QBG-dS-XwB"/>
+                            <constraint firstItem="js1-PC-dYR" firstAttribute="top" secondItem="eMA-b6-qyL" secondAttribute="bottom" constant="8" symbolic="YES" id="UmU-8E-1fe"/>
+                            <constraint firstItem="eMA-b6-qyL" firstAttribute="top" secondItem="Rzh-3d-aAN" secondAttribute="bottom" constant="50" id="WjE-2C-ege"/>
+                            <constraint firstItem="eMA-b6-qyL" firstAttribute="trailing" secondItem="fzO-q3-oHr" secondAttribute="trailingMargin" id="Xch-n3-vqk"/>
+                            <constraint firstItem="js1-PC-dYR" firstAttribute="leading" secondItem="fzO-q3-oHr" secondAttribute="leading" id="p1n-cY-r8r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonShared" destination="IYf-XX-fCq" id="g4y-iY-Bw4"/>
+                        <outlet property="labelTitle" destination="eMA-b6-qyL" id="h4q-gN-vhB"/>
+                        <outlet property="textDescription" destination="js1-PC-dYR" id="YlB-V8-Zud"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8y-OV-gXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6723" y="1067"/>
         </scene>
     </scenes>
 </document>
