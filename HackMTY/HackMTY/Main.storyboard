@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bza-Ca-LE6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -392,11 +393,12 @@
                     <connections>
                         <segue destination="gdA-tr-GbX" kind="relationship" relationship="viewControllers" id="HoC-A3-JDB"/>
                         <segue destination="3fJ-ih-BQJ" kind="relationship" relationship="viewControllers" id="UCs-NQ-g1Z"/>
+                        <segue destination="hFn-r4-WgG" kind="relationship" relationship="viewControllers" id="1kw-OV-0XX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjY-zK-LQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4456" y="373"/>
+            <point key="canvasLocation" x="4352" y="1013"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CYq-1h-7nQ">
@@ -453,5 +455,89 @@
             </objects>
             <point key="canvasLocation" x="5268" y="1067"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="bnf-6N-nsX">
+            <objects>
+                <viewController id="XBA-BP-bOG" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LOf-kk-RHz"/>
+                        <viewControllerLayoutGuide type="bottom" id="vQw-51-OyJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CLi-Sn-QpM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collaboration-25.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Qj-yD-fmn">
+                                <rect key="frame" x="16" y="72" width="64" height="64"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="K2U-6A-h4e"/>
+                                    <constraint firstAttribute="width" secondItem="6Qj-yD-fmn" secondAttribute="height" multiplier="1:1" id="smA-hv-E2x"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0i2-Fh-1s1" appends="YES" id="e0N-J6-0Rw"/>
+                                </connections>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="hxt-gd-hXF">
+                                <rect key="frame" x="0.0" y="144" width="600" height="456"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your visible name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aSW-Yz-A4O">
+                                <rect key="frame" x="88" y="89" width="496" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aSW-Yz-A4O" firstAttribute="trailing" secondItem="CLi-Sn-QpM" secondAttribute="trailingMargin" id="1oT-bF-rLk"/>
+                            <constraint firstItem="6Qj-yD-fmn" firstAttribute="leading" secondItem="CLi-Sn-QpM" secondAttribute="leadingMargin" id="2cJ-ge-d3C"/>
+                            <constraint firstAttribute="bottom" secondItem="hxt-gd-hXF" secondAttribute="bottom" id="Jtr-Bl-JA3"/>
+                            <constraint firstItem="aSW-Yz-A4O" firstAttribute="leading" secondItem="6Qj-yD-fmn" secondAttribute="trailing" constant="8" id="MEo-bi-AIj"/>
+                            <constraint firstItem="hxt-gd-hXF" firstAttribute="leading" secondItem="CLi-Sn-QpM" secondAttribute="leading" id="VDb-ok-ZtZ"/>
+                            <constraint firstItem="hxt-gd-hXF" firstAttribute="top" secondItem="6Qj-yD-fmn" secondAttribute="bottom" constant="8" symbolic="YES" id="fuL-HA-Pu7"/>
+                            <constraint firstAttribute="trailing" secondItem="hxt-gd-hXF" secondAttribute="trailing" id="jnb-Ko-dSZ"/>
+                            <constraint firstItem="aSW-Yz-A4O" firstAttribute="top" secondItem="LOf-kk-RHz" secondAttribute="bottom" constant="25" id="mld-rZ-4nA"/>
+                            <constraint firstItem="6Qj-yD-fmn" firstAttribute="top" secondItem="LOf-kk-RHz" secondAttribute="bottom" constant="8" symbolic="YES" id="oeI-WD-Oj4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JIv-hs-u8g"/>
+                    <connections>
+                        <outlet property="imageProfile" destination="6Qj-yD-fmn" id="53H-Vw-RDL"/>
+                        <outlet property="tableProfile" destination="hxt-gd-hXF" id="AIo-Oy-Nsy"/>
+                        <outlet property="textFieldUsername" destination="aSW-Yz-A4O" id="LsZ-hd-x1I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceS-pt-tPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0i2-Fh-1s1">
+                    <connections>
+                        <action selector="selectProfilePicture:" destination="XBA-BP-bOG" id="s3T-91-d01"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="6080" y="1755"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="8GK-K0-WMo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hFn-r4-WgG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="PBN-7M-Aiq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ABW-to-gOy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XBA-BP-bOG" kind="relationship" relationship="rootViewController" id="zXw-sp-cbS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xac-32-gsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5268" y="1755"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="collaboration-25.png" width="12" height="12"/>
+    </resources>
 </document>
