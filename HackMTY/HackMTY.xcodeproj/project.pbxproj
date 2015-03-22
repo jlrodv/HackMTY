@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07D1D2801ABE306C00B877ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1D27E1ABE306C00B877ED /* LoginViewController.m */; };
+		07D1D2811ABE306C00B877ED /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D1D27F1ABE306C00B877ED /* LoginViewController.xib */; };
+		07D1D2851ABE4BB800B877ED /* LogUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1D2831ABE4BB800B877ED /* LogUserViewController.m */; };
+		07D1D2861ABE4BB800B877ED /* LogUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D1D2841ABE4BB800B877ED /* LogUserViewController.xib */; };
+		07D1D28A1ABE4BD100B877ED /* SignUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1D2881ABE4BD100B877ED /* SignUserViewController.m */; };
+		07D1D28B1ABE4BD100B877ED /* SignUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D1D2891ABE4BD100B877ED /* SignUserViewController.xib */; };
 		39982CBA6B41960741E1C356 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D69150272356D055BA599D5 /* libPods.a */; };
 		A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9A71ABDE97F00B7D32A /* main.m */; };
 		A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */; };
@@ -31,6 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07D1D27D1ABE306C00B877ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		07D1D27E1ABE306C00B877ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		07D1D27F1ABE306C00B877ED /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		07D1D2821ABE4BB800B877ED /* LogUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUserViewController.h; sourceTree = "<group>"; };
+		07D1D2831ABE4BB800B877ED /* LogUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogUserViewController.m; sourceTree = "<group>"; };
+		07D1D2841ABE4BB800B877ED /* LogUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogUserViewController.xib; sourceTree = "<group>"; };
+		07D1D2871ABE4BD100B877ED /* SignUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUserViewController.h; sourceTree = "<group>"; };
+		07D1D2881ABE4BD100B877ED /* SignUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUserViewController.m; sourceTree = "<group>"; };
+		07D1D2891ABE4BD100B877ED /* SignUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUserViewController.xib; sourceTree = "<group>"; };
 		1B1B8037154819E326B53FA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2D69150272356D055BA599D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E4C9A21ABDE97F00B7D32A /* HackMTY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackMTY.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,9 +426,12 @@
 			baseConfigurationReference = 1B1B8037154819E326B53FA4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jose Luis Rodriguez (H7KT3896WS)";
 				INFOPLIST_FILE = HackMTY/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ad07a299-548c-440a-991e-7c58a80ea657";
 			};
 			name = Debug;
 		};
@@ -423,8 +441,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HackMTY/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ad07a299-548c-440a-991e-7c58a80ea657";
 			};
 			name = Release;
 		};
