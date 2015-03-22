@@ -24,6 +24,9 @@
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelLogin)];
     self.navigationItem.rightBarButtonItem = logInButton;
     self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    self.fieldEmail.delegate = self;
+    self.fieldPassword.delegate = self;
 }
 
 - (void)loginUser
@@ -38,6 +41,7 @@
         [PFUser logInWithUsernameInBackground:self.fieldEmail.text password:self.fieldPassword.text block:^(PFUser *user, NSError *error) {
             if(!error){
                 //Metodo de un custom delegate
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
             else{
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occured while login. Please try again." preferredStyle:UIAlertControllerStyleAlert];
@@ -54,6 +58,18 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark TextField Delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if(textField == self.fieldEmail){
+        [textField resignFirstResponder];
+        [self.fieldPassword becomeFirstResponder];
+    }
+    else if(textField == self.fieldPassword){
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
 
 
 @end

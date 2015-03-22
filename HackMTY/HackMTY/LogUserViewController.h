@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LogUserViewController : UIViewController
+@interface LogUserViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *fieldEmail;
 @property (weak, nonatomic) IBOutlet UITextField *fieldPassword;
