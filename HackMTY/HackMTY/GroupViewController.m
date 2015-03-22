@@ -7,7 +7,6 @@
 //
 
 #import "GroupViewController.h"
-#import "GroupTableViewCell.h"
 
 @interface GroupViewController ()
 
@@ -19,10 +18,7 @@
     [super viewDidLoad];
     
     self.title = @"Group";
-    
-    UINib *nib = [UINib nibWithNibName:@"CellView" bundle:nil];
-    [[self table] registerNib:nib forCellReuseIdentifier:@"groupCell"];
-    NSLog(@"hir");
+        NSLog(@"hir");
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,15 +30,13 @@
 -(NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
 
-    return 3;
+    return 5;
 
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [self.table dequeueReusableCellWithIdentifier:@"groupCell"];
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    cell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 //    cell.groupNameLabel.text = @"Swift Program";
 //    NSDateFormatter *format = [[NSDateFormatter alloc] init];
 //    [format setDateFormat:@"dd/MM/yy"];

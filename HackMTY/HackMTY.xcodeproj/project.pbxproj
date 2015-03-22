@@ -8,22 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		07D1D2801ABE306C00B877ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1D27E1ABE306C00B877ED /* LoginViewController.m */; };
-		07D1D2811ABE306C00B877ED /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D1D27F1ABE306C00B877ED /* LoginViewController.xib */; };
 		07D1D2851ABE4BB800B877ED /* LogUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1D2831ABE4BB800B877ED /* LogUserViewController.m */; };
-		07D1D2861ABE4BB800B877ED /* LogUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D1D2841ABE4BB800B877ED /* LogUserViewController.xib */; };
 		07D1D28A1ABE4BD100B877ED /* SignUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1D2881ABE4BD100B877ED /* SignUserViewController.m */; };
-		07D1D28B1ABE4BD100B877ED /* SignUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D1D2891ABE4BD100B877ED /* SignUserViewController.xib */; };
 		39982CBA6B41960741E1C356 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D69150272356D055BA599D5 /* libPods.a */; };
 		A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9A71ABDE97F00B7D32A /* main.m */; };
 		A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */; };
 		A0E4C9B31ABDE97F00B7D32A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9B21ABDE97F00B7D32A /* Images.xcassets */; };
 		A0E4C9B61ABDE97F00B7D32A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9B41ABDE97F00B7D32A /* LaunchScreen.xib */; };
 		A0E4C9C21ABDE97F00B7D32A /* HackMTYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9C11ABDE97F00B7D32A /* HackMTYTests.m */; };
-		A0E4C9D11ABE30F800B7D32A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9D01ABE30F800B7D32A /* TabBarViewController.m */; };
 		A0E4C9DA1ABE404400B7D32A /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9D81ABE404400B7D32A /* GroupViewController.m */; };
-		A0E4C9DB1ABE404400B7D32A /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9D91ABE404400B7D32A /* GroupViewController.xib */; };
-		A0E4C9DD1ABE48C000B7D32A /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9DC1ABE48C000B7D32A /* CellView.xib */; };
-		A0E4C9E01ABE4BE400B7D32A /* GroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9DF1ABE4BE400B7D32A /* GroupTableViewCell.m */; };
+		A0E4C9E21ABE580F00B7D32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9E11ABE580F00B7D32A /* Main.storyboard */; };
+		A0E4C9E31ABE580F00B7D32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9E11ABE580F00B7D32A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +34,10 @@
 /* Begin PBXFileReference section */
 		07D1D27D1ABE306C00B877ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		07D1D27E1ABE306C00B877ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		07D1D27F1ABE306C00B877ED /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		07D1D2821ABE4BB800B877ED /* LogUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUserViewController.h; sourceTree = "<group>"; };
 		07D1D2831ABE4BB800B877ED /* LogUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogUserViewController.m; sourceTree = "<group>"; };
-		07D1D2841ABE4BB800B877ED /* LogUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogUserViewController.xib; sourceTree = "<group>"; };
 		07D1D2871ABE4BD100B877ED /* SignUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUserViewController.h; sourceTree = "<group>"; };
 		07D1D2881ABE4BD100B877ED /* SignUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUserViewController.m; sourceTree = "<group>"; };
-		07D1D2891ABE4BD100B877ED /* SignUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUserViewController.xib; sourceTree = "<group>"; };
 		1B1B8037154819E326B53FA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2D69150272356D055BA599D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E4C9A21ABDE97F00B7D32A /* HackMTY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackMTY.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,14 +50,9 @@
 		A0E4C9BB1ABDE97F00B7D32A /* HackMTYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackMTYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E4C9C01ABDE97F00B7D32A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E4C9C11ABDE97F00B7D32A /* HackMTYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackMTYTests.m; sourceTree = "<group>"; };
-		A0E4C9CF1ABE30F800B7D32A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
-		A0E4C9D01ABE30F800B7D32A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		A0E4C9D71ABE404400B7D32A /* GroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupViewController.h; sourceTree = "<group>"; };
 		A0E4C9D81ABE404400B7D32A /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupViewController.m; sourceTree = "<group>"; };
-		A0E4C9D91ABE404400B7D32A /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
-		A0E4C9DC1ABE48C000B7D32A /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
-		A0E4C9DE1ABE4BE400B7D32A /* GroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTableViewCell.h; sourceTree = "<group>"; };
-		A0E4C9DF1ABE4BE400B7D32A /* GroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTableViewCell.m; sourceTree = "<group>"; };
+		A0E4C9E11ABE580F00B7D32A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = HackMTY/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		B2392BE415C0B763776E1B01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,18 +107,19 @@
 		A0E4C9A41ABDE97F00B7D32A /* HackMTY */ = {
 			isa = PBXGroup;
 			children = (
+				A0E4C9E11ABE580F00B7D32A /* Main.storyboard */,
 				A0E4C9A91ABDE97F00B7D32A /* AppDelegate.h */,
 				A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */,
 				A0E4C9B21ABDE97F00B7D32A /* Images.xcassets */,
 				A0E4C9B41ABDE97F00B7D32A /* LaunchScreen.xib */,
-				A0E4C9CF1ABE30F800B7D32A /* TabBarViewController.h */,
-				A0E4C9D01ABE30F800B7D32A /* TabBarViewController.m */,
 				A0E4C9D71ABE404400B7D32A /* GroupViewController.h */,
 				A0E4C9D81ABE404400B7D32A /* GroupViewController.m */,
-				A0E4C9D91ABE404400B7D32A /* GroupViewController.xib */,
-				A0E4C9DC1ABE48C000B7D32A /* CellView.xib */,
-				A0E4C9DE1ABE4BE400B7D32A /* GroupTableViewCell.h */,
-				A0E4C9DF1ABE4BE400B7D32A /* GroupTableViewCell.m */,
+				07D1D27D1ABE306C00B877ED /* LoginViewController.h */,
+				07D1D27E1ABE306C00B877ED /* LoginViewController.m */,
+				07D1D2821ABE4BB800B877ED /* LogUserViewController.h */,
+				07D1D2831ABE4BB800B877ED /* LogUserViewController.m */,
+				07D1D2871ABE4BD100B877ED /* SignUserViewController.h */,
+				07D1D2881ABE4BD100B877ED /* SignUserViewController.m */,
 				A0E4C9A51ABDE97F00B7D32A /* Supporting Files */,
 			);
 			path = HackMTY;
@@ -253,8 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0E4C9DD1ABE48C000B7D32A /* CellView.xib in Resources */,
-				A0E4C9DB1ABE404400B7D32A /* GroupViewController.xib in Resources */,
+				A0E4C9E21ABE580F00B7D32A /* Main.storyboard in Resources */,
 				A0E4C9B61ABDE97F00B7D32A /* LaunchScreen.xib in Resources */,
 				A0E4C9B31ABDE97F00B7D32A /* Images.xcassets in Resources */,
 			);
@@ -264,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E4C9E31ABE580F00B7D32A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0E4C9E01ABE4BE400B7D32A /* GroupTableViewCell.m in Sources */,
 				A0E4C9DA1ABE404400B7D32A /* GroupViewController.m in Sources */,
-				A0E4C9D11ABE30F800B7D32A /* TabBarViewController.m in Sources */,
+				07D1D2801ABE306C00B877ED /* LoginViewController.m in Sources */,
+				07D1D28A1ABE4BD100B877ED /* SignUserViewController.m in Sources */,
+				07D1D2851ABE4BB800B877ED /* LogUserViewController.m in Sources */,
 				A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */,
 				A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */,
 			);
