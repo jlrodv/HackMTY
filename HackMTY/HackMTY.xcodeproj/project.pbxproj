@@ -19,6 +19,10 @@
 		A0E4C9DA1ABE404400B7D32A /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9D81ABE404400B7D32A /* GroupViewController.m */; };
 		A0E4C9E21ABE580F00B7D32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9E11ABE580F00B7D32A /* Main.storyboard */; };
 		A0E4C9E31ABE580F00B7D32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E4C9E11ABE580F00B7D32A /* Main.storyboard */; };
+		A0E4C9E61ABEB3C300B7D32A /* MultiPeerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9E51ABEB3C300B7D32A /* MultiPeerObject.m */; };
+		A0E4C9E81ABEB52600B7D32A /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4C9E71ABEB52600B7D32A /* MultipeerConnectivity.framework */; };
+		A0E4C9EE1ABEF20B00B7D32A /* NewGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9ED1ABEF20B00B7D32A /* NewGroupTableViewController.m */; };
+		A0E4C9F11ABEF6BC00B7D32A /* NearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9F01ABEF6BC00B7D32A /* NearViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		A0E4C9D71ABE404400B7D32A /* GroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupViewController.h; sourceTree = "<group>"; };
 		A0E4C9D81ABE404400B7D32A /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupViewController.m; sourceTree = "<group>"; };
 		A0E4C9E11ABE580F00B7D32A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = HackMTY/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		A0E4C9E41ABEB3C300B7D32A /* MultiPeerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPeerObject.h; sourceTree = "<group>"; };
+		A0E4C9E51ABEB3C300B7D32A /* MultiPeerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPeerObject.m; sourceTree = "<group>"; };
+		A0E4C9E71ABEB52600B7D32A /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		A0E4C9EC1ABEF20B00B7D32A /* NewGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGroupTableViewController.h; sourceTree = "<group>"; };
+		A0E4C9ED1ABEF20B00B7D32A /* NewGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGroupTableViewController.m; sourceTree = "<group>"; };
+		A0E4C9EF1ABEF6BC00B7D32A /* NearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearViewController.h; sourceTree = "<group>"; };
+		A0E4C9F01ABEF6BC00B7D32A /* NearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearViewController.m; sourceTree = "<group>"; };
 		B2392BE415C0B763776E1B01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E4C9E81ABEB52600B7D32A /* MultipeerConnectivity.framework in Frameworks */,
 				39982CBA6B41960741E1C356 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				A0E4C9E11ABE580F00B7D32A /* Main.storyboard */,
+				A0E4C9EF1ABEF6BC00B7D32A /* NearViewController.h */,
+				A0E4C9F01ABEF6BC00B7D32A /* NearViewController.m */,
 				A0E4C9A91ABDE97F00B7D32A /* AppDelegate.h */,
 				A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */,
 				A0E4C9B21ABDE97F00B7D32A /* Images.xcassets */,
@@ -120,6 +134,10 @@
 				07D1D2831ABE4BB800B877ED /* LogUserViewController.m */,
 				07D1D2871ABE4BD100B877ED /* SignUserViewController.h */,
 				07D1D2881ABE4BD100B877ED /* SignUserViewController.m */,
+				A0E4C9E41ABEB3C300B7D32A /* MultiPeerObject.h */,
+				A0E4C9E51ABEB3C300B7D32A /* MultiPeerObject.m */,
+				A0E4C9EC1ABEF20B00B7D32A /* NewGroupTableViewController.h */,
+				A0E4C9ED1ABEF20B00B7D32A /* NewGroupTableViewController.m */,
 				A0E4C9A51ABDE97F00B7D32A /* Supporting Files */,
 			);
 			path = HackMTY;
@@ -154,6 +172,7 @@
 		A62FAD3FF0D0C3A7B8897176 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0E4C9E71ABEB52600B7D32A /* MultipeerConnectivity.framework */,
 				2D69150272356D055BA599D5 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -295,11 +314,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E4C9E61ABEB3C300B7D32A /* MultiPeerObject.m in Sources */,
 				A0E4C9DA1ABE404400B7D32A /* GroupViewController.m in Sources */,
 				07D1D2801ABE306C00B877ED /* LoginViewController.m in Sources */,
 				07D1D28A1ABE4BD100B877ED /* SignUserViewController.m in Sources */,
 				07D1D2851ABE4BB800B877ED /* LogUserViewController.m in Sources */,
 				A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */,
+				A0E4C9EE1ABEF20B00B7D32A /* NewGroupTableViewController.m in Sources */,
+				A0E4C9F11ABEF6BC00B7D32A /* NearViewController.m in Sources */,
 				A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
