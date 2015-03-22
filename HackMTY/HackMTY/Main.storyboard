@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="6080" y="371"/>
         </scene>
-        <!--View Controller-->
+        <!--Near View Controller-->
         <scene sceneID="ot6-OL-8xP">
             <objects>
-                <viewController id="Wfc-V4-kCw" sceneMemberID="viewController">
+                <viewController id="Wfc-V4-kCw" customClass="NearViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iVu-xg-7ol"/>
                         <viewControllerLayoutGuide type="bottom" id="TZA-XU-BSq"/>
@@ -219,7 +219,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Nearby" id="wp1-5j-6xg">
-                                        <barButtonItem key="rightBarButtonItem" title="Finish" id="1C1-3J-MOF"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Finish" id="1C1-3J-MOF">
+                                            <connections>
+                                                <action selector="close:" destination="Wfc-V4-kCw" id="gOG-Bt-EXF"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -256,6 +260,9 @@
                             <constraint firstItem="Iy2-Er-zo7" firstAttribute="leading" secondItem="SJY-Ek-Zj4" secondAttribute="leadingMargin" constant="-16" id="peT-cK-Raw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Iy2-Er-zo7" id="dDd-6w-iSX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nat-Te-g40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

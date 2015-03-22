@@ -14,5 +14,7 @@
 @property (nonatomic, strong) MCSession *session;
 
 +(id)sharedManager;
+-(void)startBrowsing;
+-(void) sendRequestToPeer:(MCPeerID *)peer;
 
 @end

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NearViewController : UIViewController
+@interface NearViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (IBAction)close:(UIBarButtonItem *)sender;
 @end
