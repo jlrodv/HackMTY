@@ -12,7 +12,7 @@
 
 @interface HomeworkViewController ()
 {
-    NSArray *queryArray;
+    NSMutableArray *queryArray;
     NSMutableArray *dueDates;
     
 }
@@ -29,12 +29,14 @@
     self.tableHomework.dataSource = self;
     
     dueDates = [[NSMutableArray alloc]init];
+    queryArray = [[NSMutableArray alloc] init];
     [self downloadFromParse:self.buttonSwitch.selectedSegmentIndex];
 }
 
 - (void)downloadFromParse:(NSInteger)segmentedIndex
 {
     [dueDates removeAllObjects];
+    [queryArray removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Task"];
     switch(segmentedIndex)
     {
@@ -53,7 +55,8 @@
     }
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error){
-            queryArray = objects;
+            [queryArray addObjectsFromArray:objects];
+            
             for (PFObject *object in queryArray) {
                 [dueDates addObject:[object objectForKey:@"DueDate"]];
             }
@@ -75,7 +78,54 @@
     cell.labelTitle.text = [object objectForKey:@"Title"];
     cell.labelDescription.text = [object objectForKey:@"Description"];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject *object = [queryArray objectAtIndex:indexPath.row];
+    PFObject *saver = [PFObject objectWithoutDataWithClassName:@"Task" objectId:[object objectId]];
     
+    switch(self.buttonSwitch.selectedSegmentIndex)
+    {
+        case 0:
+        {
+            UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *markAction = [UIAlertAction actionWithTitle:@"Mark As Completed" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [saver setObject:[NSNumber numberWithBool:YES] forKey:@"Completed"];
+                [saver save];
+                [queryArray removeObjectAtIndex:indexPath.row];
+                [tableView reloadData];
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            }];
+            [sheet addAction:markAction];
+            [sheet addAction:cancelAction];
+            [self presentViewController:sheet animated:YES completion:nil];
+        }
+        break;
+        case 1:
+        {
+            UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *markAction = [UIAlertAction actionWithTitle:@"Mark As Current" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [saver setObject:[NSNumber numberWithBool:NO] forKey:@"Completed"];
+                [saver save];
+                [queryArray removeObjectAtIndex:indexPath.row];
+                [tableView reloadData];
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            }];
+            [sheet addAction:markAction];
+            [sheet addAction:cancelAction];
+            [self presentViewController:sheet animated:YES completion:nil];
+        }
+        break;
+        default:
+            break;
+    }
 }
 
 

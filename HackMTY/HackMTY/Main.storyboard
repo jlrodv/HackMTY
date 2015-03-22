@@ -121,7 +121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="83" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="qad-QF-nQP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="83" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="qad-QF-nQP">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -190,12 +190,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dm7-X0-5ug" firstAttribute="top" secondItem="qad-QF-nQP" secondAttribute="bottom" id="Av6-wk-95F"/>
-                            <constraint firstItem="qad-QF-nQP" firstAttribute="top" secondItem="7Df-Ma-moK" secondAttribute="bottom" id="Cx9-3e-Z0m"/>
-                            <constraint firstItem="qad-QF-nQP" firstAttribute="leading" secondItem="gk9-yu-ZQO" secondAttribute="leadingMargin" constant="-16" id="ZSq-vg-Le3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qad-QF-nQP" secondAttribute="trailing" constant="-16" id="zNY-2c-RII"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d2Y-dW-gij"/>
                     <connections>
