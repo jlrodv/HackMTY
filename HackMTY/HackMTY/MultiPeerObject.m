@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 jlrodv. All rights reserved.
 //
 #define SEPARATOR @"/00FF0/"
+#define OBJSEPARATOR @"/0F0F0"
+
 #import "MultiPeerObject.h"
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import <Parse/Parse.h>
@@ -35,7 +37,7 @@
     if (self = [super init]) {
         
         
-        self.peerId = [[MCPeerID alloc] initWithDisplayName:[NSString stringWithFormat:@"%@%@%@",[PFUser currentUser].email,SEPARATOR,[[PFUser currentUser] valueForKey:@"user"] ] ];
+        self.peerId = [[MCPeerID alloc] initWithDisplayName:[NSString stringWithFormat:@"%@%@%@%@%@",[PFUser currentUser].email,SEPARATOR,[[PFUser currentUser] valueForKey:@"user"],OBJSEPARATOR,[PFUser currentUser].objectId ] ];
         self.advertiser = [[MCNearbyServiceAdvertiser alloc]initWithPeer:self.peerId discoveryInfo:nil serviceType:@"hckmty-txtchat"];
         self.advertiser.delegate = self;
         [self.advertiser startAdvertisingPeer];
@@ -52,6 +54,8 @@
 }
 
 -(void)startBrowsing{
+    
+    NSLog(@"start browsing");
 
     self.browser = [[MCNearbyServiceBrowser alloc]initWithPeer:self.peerId serviceType:@"hckmty-txtchat"];
     self.browser.delegate = self;
@@ -62,13 +66,20 @@
 
 -(void)sendRequestToPeer:(MCPeerID *)peer{
 
-    [self.session connectPeer:peer withNearbyConnectionData:nil];
+    [self.browser invitePeer:peer toSession:self.session withContext:nil timeout:60];
 
 }
 
+-(void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error{
+
+    NSLog(@"failed");
+
+}
 
 -(void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info{
 
+    NSLog(@"FOUND");
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"foundPeer" object:nil userInfo:@{@"peer":peerID}];
     
 }
@@ -82,6 +93,8 @@
 
 -(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler{
 
+    
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"invitation" object:nil userInfo:@{@"peer":peerID,@"invitation":invitationHandler}];
 
 }
@@ -112,6 +125,48 @@
 }
 
 -(void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID{
+}
+
+
+
+-(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error{
+
+    NSLog(@"didnt started ");
+}
+
+
++(NSString *)userFromPeer:(MCPeerID *)peer{
+
+    NSString *dsp = peer.displayName;
+    
+    
+    NSRange orange = [dsp rangeOfString:OBJSEPARATOR];
+    
+    dsp = [dsp substringToIndex:orange.location];
+    
+    NSRange sep = [dsp rangeOfString:SEPARATOR];
+
+    
+    return [dsp substringFromIndex:sep.location+sep.length];
+}
+
++(NSString *)mailFromPeer:(MCPeerID *)peer{
+
+    NSString *dsp = peer.displayName;
+    
+    NSRange sep = [dsp rangeOfString:SEPARATOR];
+    
+    
+    return [dsp substringToIndex:sep.location];
+
+}
+
++(NSString *)objFromPeer:(MCPeerID *)peer{
+    NSString *dsp = peer.displayName;
+
+    NSRange range = [dsp rangeOfString:OBJSEPARATOR];
+    
+    return [dsp substringFromIndex:range.location+range.length];
 }
 
 @end

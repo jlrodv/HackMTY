@@ -24,6 +24,8 @@
     
     self.found = [[NSMutableArray alloc] init];
     self.accepted =[[NSMutableArray alloc] init];
+    
+    [[MultiPeerObject sharedManager] startBrowsing];
 }
 
 -(void)registerNotifications{
@@ -44,9 +46,19 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"peer"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"peerCell"];
 
-    cell.textLabel.text = [[self.found objectAtIndex:indexPath.row] valueForKey:@"peer"];
+    UILabel *user = (UILabel*) [cell viewWithTag:1];
+    user.text=[MultiPeerObject userFromPeer:[self.found objectAtIndex:indexPath.row]];
+    if([self userAccepted:[self.found objectAtIndex:indexPath.row]])
+        user.textColor = [UIColor greenColor];
+    else
+        user.textColor = [UIColor blackColor];
+    
+    UILabel *mail = (UILabel *)[cell viewWithTag:2];
+    mail.text = [MultiPeerObject mailFromPeer:[self.found objectAtIndex:indexPath.row]];
+    //cell.textLabel.text = [(MCPeerID *)[self.found objectAtIndex:indexPath.row]  displayName];
+    
     
     return cell;
 
@@ -68,12 +80,16 @@
 }
 */
 -(void)newPeerFound:(NSNotification *)userInfo{
+    NSLog(@"pir faund");
     [self.found addObject:[[userInfo valueForKey:@"userInfo"] objectForKey:@"peer"]];
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    
+    });
 }
 
 -(void)peerLost:(NSNotification *)userInfo{
-    
+    NSLog(@"lost");
     MCPeerID *lostPeer = [[userInfo valueForKey:@"userInfo"] valueForKey:@"peer"];
     for(MCPeerID *peer in self.found){
     
@@ -91,13 +107,29 @@
 }
 
 -(void)acceptedInvitation:(NSNotification *)userInfo{
+    
+    NSLog(@"accepted");
 
     [self.accepted addObject:[[userInfo valueForKey:@"userInfo"] objectForKey:@"peer"]];
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        
+    });
+
 }
 
 - (IBAction)close:(UIBarButtonItem *)sender {
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"addedTeam" object:nil userInfo:@{@"accepted":self.accepted}];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(BOOL)userAccepted:(MCPeerID *)peer{
+
+    if([self.accepted indexOfObject:peer]==NSNotFound)
+        return NO;
+    return YES;
+
 }
 
 @end

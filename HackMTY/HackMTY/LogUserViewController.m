@@ -41,7 +41,8 @@
         [PFUser logInWithUsernameInBackground:self.fieldEmail.text password:self.fieldPassword.text block:^(PFUser *user, NSError *error) {
             if(!error){
                 //Metodo de un custom delegate
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [self performSegueWithIdentifier:@"loged" sender:nil];
+
             }
             else{
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"An error occured while login. Please try again." preferredStyle:UIAlertControllerStyleAlert];

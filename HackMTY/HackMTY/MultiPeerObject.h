@@ -14,6 +14,9 @@
 @property (nonatomic, strong) MCSession *session;
 
 +(id)sharedManager;
++(NSString *)userFromPeer:(MCPeerID *)peer;
++(NSString *)mailFromPeer:(MCPeerID *)peer;
++(NSString *)objFromPeer:(MCPeerID *)peer;
 -(void)startBrowsing;
 -(void) sendRequestToPeer:(MCPeerID *)peer;
 

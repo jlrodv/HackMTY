@@ -23,6 +23,7 @@
 		A0E4C9E81ABEB52600B7D32A /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4C9E71ABEB52600B7D32A /* MultipeerConnectivity.framework */; };
 		A0E4C9EE1ABEF20B00B7D32A /* NewGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9ED1ABEF20B00B7D32A /* NewGroupTableViewController.m */; };
 		A0E4C9F11ABEF6BC00B7D32A /* NearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9F01ABEF6BC00B7D32A /* NearViewController.m */; };
+		A0E4C9F41ABF0FB600B7D32A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9F31ABF0FB600B7D32A /* TabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		A0E4C9ED1ABEF20B00B7D32A /* NewGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGroupTableViewController.m; sourceTree = "<group>"; };
 		A0E4C9EF1ABEF6BC00B7D32A /* NearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearViewController.h; sourceTree = "<group>"; };
 		A0E4C9F01ABEF6BC00B7D32A /* NearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearViewController.m; sourceTree = "<group>"; };
+		A0E4C9F21ABF0FB600B7D32A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		A0E4C9F31ABF0FB600B7D32A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		B2392BE415C0B763776E1B01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +137,8 @@
 				07D1D2831ABE4BB800B877ED /* LogUserViewController.m */,
 				07D1D2871ABE4BD100B877ED /* SignUserViewController.h */,
 				07D1D2881ABE4BD100B877ED /* SignUserViewController.m */,
+				A0E4C9F21ABF0FB600B7D32A /* TabBarViewController.h */,
+				A0E4C9F31ABF0FB600B7D32A /* TabBarViewController.m */,
 				A0E4C9E41ABEB3C300B7D32A /* MultiPeerObject.h */,
 				A0E4C9E51ABEB3C300B7D32A /* MultiPeerObject.m */,
 				A0E4C9EC1ABEF20B00B7D32A /* NewGroupTableViewController.h */,
@@ -314,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E4C9F41ABF0FB600B7D32A /* TabBarViewController.m in Sources */,
 				A0E4C9E61ABEB3C300B7D32A /* MultiPeerObject.m in Sources */,
 				A0E4C9DA1ABE404400B7D32A /* GroupViewController.m in Sources */,
 				07D1D2801ABE306C00B877ED /* LoginViewController.m in Sources */,

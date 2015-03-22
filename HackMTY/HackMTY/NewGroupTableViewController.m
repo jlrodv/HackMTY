@@ -7,15 +7,21 @@
 //
 
 #import "NewGroupTableViewController.h"
+#import "MultiPeerObject.h"
+#import <Parse/Parse.h>
 
 @interface NewGroupTableViewController ()<UITextFieldDelegate>
-
+@property (nonatomic, strong) NSMutableArray *accepted;
+@property (nonatomic, strong) NSDate *date;
 @end
 
 @implementation NewGroupTableViewController
 
 - (void)viewDidLoad {
+    self.date = [[NSDate alloc] init];
     [super viewDidLoad];
+    self.accepted = [[NSMutableArray alloc] init];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(teamAdded:) name:@"addedTeam" object:nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -29,6 +35,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)teamAdded:(NSNotification *)notification{
+    
+    NSLog(@"added %@", self.accepted);
+    
+    self.accepted = [[notification valueForKey:@"userInfo"] objectForKey:@"accepted"];
+    
+    self.teamName.text = [MultiPeerObject mailFromPeer:[self.accepted firstObject]];
+    
+    NSLog(@"%@", [MultiPeerObject objFromPeer:[self.accepted firstObject]]);
+
+}
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     UIDatePicker *picker = [[UIDatePicker alloc] init];
@@ -41,10 +58,13 @@
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd/MM/yy"];
     self.dateField.text = [format stringFromDate:picker.date];
+    self.date = picker.date;
 }
 
 -(void)valueForPicker:(UIDatePicker * )picker{
 
+    self.date = picker.date;
+    
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd/MM/yy"];
     self.dateField.text = [format stringFromDate:picker.date];
@@ -124,5 +144,44 @@
 }
 
 - (IBAction)save:(UIBarButtonItem *)sender {
+    
+    PFObject *obj = [PFObject objectWithClassName:@"group"];
+    [obj setValue:self.nameField.text forKey:@"name"];
+    [obj setValue:self.date forKey:@"dueDate"];
+    [obj setValue:self.classField.text forKey:@"class"];
+    
+    [obj saveInBackgroundWithBlock:^(BOOL succeed, NSError *error){
+        
+        if(!error&&succeed){
+            NSLog(@"otro");
+            PFRelation *rel = [obj relationForKey:@"participants"];
+            [rel addObject:[PFUser currentUser]];
+            
+            [obj saveInBackground];
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+            [query getObjectInBackgroundWithId:[MultiPeerObject objFromPeer:[self.accepted firstObject]] block:^(PFObject *object, NSError *error){
+                NSLog(@"aqui");
+                if(object){
+                
+                    PFRelation *rela = [obj relationForKey:@"participants"];
+                    [rela addObject:object];
+                    [obj saveInBackground];
+                    
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                
+                }
+                else{
+                
+                    [self dismissViewControllerAnimated:YES completion:nil];
+
+                }
+            
+            }];
+        }
+    
+    
+    }];
+    
 }
 @end

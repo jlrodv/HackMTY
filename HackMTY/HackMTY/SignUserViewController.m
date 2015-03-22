@@ -39,7 +39,7 @@
         [newUser setValue:self.fieldUsername.text forKey:@"user"];
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(!error){
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [self performSegueWithIdentifier:@"signed" sender:nil];
             }
         }];
     }
