@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07D1D2801ABE306C00B877ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1D27E1ABE306C00B877ED /* LoginViewController.m */; };
+		07D1D2811ABE306C00B877ED /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D1D27F1ABE306C00B877ED /* LoginViewController.xib */; };
 		39982CBA6B41960741E1C356 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D69150272356D055BA599D5 /* libPods.a */; };
 		A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9A71ABDE97F00B7D32A /* main.m */; };
 		A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9AA1ABDE97F00B7D32A /* AppDelegate.m */; };
@@ -28,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07D1D27D1ABE306C00B877ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		07D1D27E1ABE306C00B877ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		07D1D27F1ABE306C00B877ED /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		1B1B8037154819E326B53FA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2D69150272356D055BA599D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E4C9A21ABDE97F00B7D32A /* HackMTY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackMTY.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +109,9 @@
 				A0E4C9B21ABDE97F00B7D32A /* Images.xcassets */,
 				A0E4C9B41ABDE97F00B7D32A /* LaunchScreen.xib */,
 				A0E4C9CD1ABE2E8400B7D32A /* ViewController.xib */,
+				07D1D27D1ABE306C00B877ED /* LoginViewController.h */,
+				07D1D27E1ABE306C00B877ED /* LoginViewController.m */,
+				07D1D27F1ABE306C00B877ED /* LoginViewController.xib */,
 				A0E4C9A51ABDE97F00B7D32A /* Supporting Files */,
 			);
 			path = HackMTY;
@@ -225,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D1D2811ABE306C00B877ED /* LoginViewController.xib in Resources */,
 				A0E4C9B61ABDE97F00B7D32A /* LaunchScreen.xib in Resources */,
 				A0E4C9CE1ABE2E8400B7D32A /* ViewController.xib in Resources */,
 				A0E4C9B31ABDE97F00B7D32A /* Images.xcassets in Resources */,
@@ -278,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D1D2801ABE306C00B877ED /* LoginViewController.m in Sources */,
 				A0E4C9AE1ABDE97F00B7D32A /* ViewController.m in Sources */,
 				A0E4C9AB1ABDE97F00B7D32A /* AppDelegate.m in Sources */,
 				A0E4C9A81ABDE97F00B7D32A /* main.m in Sources */,
