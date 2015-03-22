@@ -12,6 +12,8 @@
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonSign;
+@property (weak, nonatomic) IBOutlet UIButton *buttonLogin;
 
 - (IBAction)loginUser:(UIButton *)sender;
 - (IBAction)signupUser:(UIButton *)sender;

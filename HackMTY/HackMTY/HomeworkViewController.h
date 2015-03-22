@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableHomework;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *buttonSwitch;
 - (IBAction)switchHomewroks:(UISegmentedControl *)sender;
+- (IBAction)addHomework:(UIBarButtonItem *)sender;
 
 
 

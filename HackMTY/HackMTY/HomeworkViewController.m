@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "HomeworkCell.h"
 #import "TaskDetailViewController.h"
+#import "AddHomeworkViewController.h"
 
 @interface HomeworkViewController ()
 {
@@ -140,6 +141,13 @@
 - (IBAction)switchHomewroks:(UISegmentedControl *)sender
 {
     [self downloadFromParse:sender.selectedSegmentIndex];
+}
+
+- (IBAction)addHomework:(UIBarButtonItem *)sender
+{
+    AddHomeworkViewController *view = [[self storyboard] instantiateViewControllerWithIdentifier:@"add"];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:view];
+    [self presentViewController:nv animated:YES completion:nil];
 }
 @end
 

@@ -18,7 +18,13 @@
 
 - (void)viewDidLoad
 {
+    self.buttonSign.layer.cornerRadius = 5.0;
+    self.buttonSign.layer.borderColor = [[UIColor colorWithRed:91.0/255.0f green:49.0/255.0f blue:141.0/255.0f alpha:1.0f] CGColor];
+    self.buttonSign.layer.borderWidth = 1.0;
     
+    self.buttonLogin.layer.cornerRadius = 5.0;
+    self.buttonLogin.layer.borderColor = [[UIColor colorWithRed:91.0/255.0f green:49.0/255.0f blue:141.0/255.0f alpha:1.0f] CGColor];
+    self.buttonLogin.layer.borderWidth = 1.0;
 }
 
 

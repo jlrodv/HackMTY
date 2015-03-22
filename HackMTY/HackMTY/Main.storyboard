@@ -23,6 +23,7 @@
                                     <constraint firstAttribute="height" constant="70" id="QbX-hQ-7l7"/>
                                 </constraints>
                                 <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -36,6 +37,7 @@
                                     <constraint firstAttribute="height" constant="71" id="JMm-b3-vRz"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -54,6 +56,10 @@
                             <constraint firstItem="xxm-9z-phO" firstAttribute="top" secondItem="YWm-Db-UAc" secondAttribute="bottom" id="nlH-Vd-Jnh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonLogin" destination="YWm-Db-UAc" id="rmT-69-hzZ"/>
+                        <outlet property="buttonSign" destination="Z31-xd-njc" id="nE2-Hg-Cnc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUg-Zn-iQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,6 +375,11 @@
                                 <action selector="switchHomewroks:" destination="rIA-1T-MoQ" eventType="valueChanged" id="WK3-2n-s9E"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wAO-ux-aRJ">
+                            <connections>
+                                <action selector="addHomework:" destination="rIA-1T-MoQ" id="6pk-zQ-3Ow"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="buttonSwitch" destination="rvw-qO-5Xd" id="hhC-ZM-AT3"/>
@@ -453,6 +464,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R18-gP-Eic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5268" y="1067"/>
+        </scene>
+        <!--Add Homework View Controller-->
+        <scene sceneID="KjH-ue-Gbx">
+            <objects>
+                <viewController storyboardIdentifier="add" id="jQI-gp-RDn" customClass="AddHomeworkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4dU-b1-mtt"/>
+                        <viewControllerLayoutGuide type="bottom" id="ENV-cq-7ib"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WgF-nI-DOS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Homework..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gkl-Dx-9v2">
+                                <rect key="frame" x="16" y="102" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cqS-0k-SXo">
+                                <rect key="frame" x="16" y="223" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QUh-h9-SGv">
+                                <rect key="frame" x="16" y="160" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QUh-h9-SGv" firstAttribute="leading" secondItem="WgF-nI-DOS" secondAttribute="leadingMargin" id="1WL-rS-4jN"/>
+                            <constraint firstItem="cqS-0k-SXo" firstAttribute="top" secondItem="QUh-h9-SGv" secondAttribute="bottom" constant="33" id="9Vw-75-bPy"/>
+                            <constraint firstItem="cqS-0k-SXo" firstAttribute="trailing" secondItem="WgF-nI-DOS" secondAttribute="trailingMargin" id="DkM-pz-pUG"/>
+                            <constraint firstItem="cqS-0k-SXo" firstAttribute="leading" secondItem="WgF-nI-DOS" secondAttribute="leadingMargin" id="IHj-6V-sBF"/>
+                            <constraint firstItem="QUh-h9-SGv" firstAttribute="trailing" secondItem="WgF-nI-DOS" secondAttribute="trailingMargin" id="Qzc-jx-cwU"/>
+                            <constraint firstItem="Gkl-Dx-9v2" firstAttribute="top" secondItem="4dU-b1-mtt" secondAttribute="bottom" constant="82" id="SB4-MQ-bfK"/>
+                            <constraint firstItem="Gkl-Dx-9v2" firstAttribute="trailing" secondItem="WgF-nI-DOS" secondAttribute="trailingMargin" id="c28-K7-hrs"/>
+                            <constraint firstItem="Gkl-Dx-9v2" firstAttribute="leading" secondItem="WgF-nI-DOS" secondAttribute="leadingMargin" id="jOd-fG-CFU"/>
+                            <constraint firstItem="QUh-h9-SGv" firstAttribute="top" secondItem="Gkl-Dx-9v2" secondAttribute="bottom" constant="28" id="uMX-hH-i9U"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyc-Zn-eLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6816" y="373"/>
         </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="2Ng-z9-nLP">
